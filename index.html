@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notizblock</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="design.css">
+    <link rel="stylesheet" href="styles /standard.css">
+  </head>
+  <body onload="unit()">
+    <header>
+      <h1>Notizblock</h1>
+    </header>
+
+    <main>
+      <h2>your daily reminder</h2>
+      <div class="input-content">
+        <label for="title">Title</label>
+        <input id="note-title" name="title" type="text" />
+
+        <label for="note">write your notes:</label>
+        <input name="note" id="note-input" type="text" />
+        <button class="btn" onclick="addNote()">Notiz speichern</button>
+      </div>
+
+      <div class="input-content">
+        <h2>Notes</h2>
+        <div id="content">
+        </div>
+      </div>
+
+      <div class="input-content">
+        <h2>Trash</h2>
+        <div id="trash-content"></div>
+      </div>
+
+      <div class="input-content">
+        <h2>Archive</h2>
+        <div id="archiv"></div>
+      </div>
+    </main>
+  </body>
+</html>
