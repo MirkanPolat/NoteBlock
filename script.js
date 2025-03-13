@@ -64,6 +64,7 @@ function getTrashNoteTemplate(indexTrashNote){
         <p>+ Title: ${trashNotesTitles[indexTrashNote]} -> ${trashNotes[indexTrashNote]}
             <button onclick="deleteNotes(${indexTrashNote})" class="btn" >X</button>
             <button onclick="pushTrashToArchiv(${indexTrashNote})" class="btn" >Archive</button>
+            <button onclick="pushToNotes(${indexTrashNote})" class="btn" >back to notes</button>
         </p>
     `
 }
@@ -137,6 +138,19 @@ function pushToTrash(indexNote){
     renderTrashNotes();
     saveToLocalStorage();
 }
+function pushToNotes(indexTrashNote){
+    let trashPushNotes = trashNotes.splice(indexTrashNote,1);
+    notes.push(trashPushNotes[0]);
+
+    let trashPushTitles = trashNotesTitles.splice(indexTrashNote,1);
+    notesTitles.push(trashPushTitles[0]);
+
+    renderNotes();
+    renderTrashNotes();
+    saveToLocalStorage();
+
+
+}
 // deleted das objekt full 
 function deleteNotes(indexTrashNote){
     trashNotes.splice(indexTrashNote,1); // tut das entfernte in s trashnote
@@ -198,3 +212,4 @@ function getFromLocalStorage(){
         archivNotesTitles = myArrArchivNotesTitles;
     }
 }
+
